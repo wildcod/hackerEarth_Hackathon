@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const app = express()
-const studentRoutes = require('./routes/student')
+const taskRoutes = require('./routes/task')
 const userRoutes = require('./routes/user')
 
 
@@ -38,7 +38,7 @@ app.use((req,res,next) => {
     next();
 })
 
-app.use('/task' , studentRoutes)
+app.use('/task' , taskRoutes)
 app.use('/user', userRoutes)
 
 

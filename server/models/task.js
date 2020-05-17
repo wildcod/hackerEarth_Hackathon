@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const taskSchema = mongoose.Schema({
-    _id : mongoose.Schema.Types.ObjectId,
+    task_id : mongoose.Schema.Types.ObjectId,
     user_id : {
-        type : mongoose.Schema.Types.ObjectId,
+        type : mongoose.Schema.Types.ObjectId,                            // act as foreign Key
         ref : 'User',
     },
     title : {
