@@ -1,14 +1,13 @@
 const Task = require('../models/task')
+const mongoose = require('mongoose')
 
 const addTask = (req, res, next) => {
-    const { userId, title, description, due_date, label, status } = req.body
-
+    const { userId, title, description, dueDate, label, status } = req.body
+    console.log(dueDate)
     const task = new Task({
-        task_id: new mongoose.Types.ObjectId(),
-        user_id: userId,
         title: title,
         description: description,
-        due_date : new Date(due_date),
+        due_date : new Date(dueDate),
         label: label,
         status: status
     })
@@ -28,6 +27,24 @@ const addTask = (req, res, next) => {
         })
 }
 
-module.export = {
-    addTask
+const getTasks = (req, res, next) => {
+    Task.find()
+        .exec()
+        .then(tasks => {
+            const count = tasks.length;
+            res.status(200).json({
+                count : count,
+                tasks : tasks
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                error : err
+            })
+        })
+}
+
+module.exports = {
+    addTask,
+    getTasks
 }
