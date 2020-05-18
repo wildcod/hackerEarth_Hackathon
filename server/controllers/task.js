@@ -1,5 +1,5 @@
 const Task = require('../models/task')
-const mongoose = require('mongoose')
+const User = require('../models/user')
 
 const addTask = (req, res, next) => {
     const { userId, title, description, dueDate, label, status } = req.body
@@ -14,10 +14,24 @@ const addTask = (req, res, next) => {
 
     task.save()
         .then(task => {
-            res.status(200).json({
-                message : "Created Successfully",
-                taskDetails : task
-            })
+            User.findOneAndUpdate(
+                { _id : userId},
+                {
+                    $push : { 'tasks' : task._id },
+                })
+                .exec()
+                .then(() => {
+                    res.status(200).json({
+                        message : "Created Successfully",
+                        taskDetails : task
+                    })
+                })
+                .catch(error => {
+                    res.status(500).json({
+                        error : error,
+                        message : "user not found"
+                    })
+                })
         })
         .catch(error => {
             res.status(500).json({
@@ -27,14 +41,42 @@ const addTask = (req, res, next) => {
         })
 }
 
-const getTasks = (req, res, next) => {
-    Task.find()
+const updateTask = (req, res, next) => {
+    const taskId = req.params.taskId;
+    console.log(req.body)
+    const updateOps = {};
+    for(const ops of req.body){
+        updateOps[ops.propName] = ops.value
+    }
+    console.log(updateOps)
+    Task.findOneAndUpdate(
+        { _id : taskId },
+        { $set : updateOps },
+        { new : true}
+        )
         .exec()
-        .then(tasks => {
-            const count = tasks.length;
+        .then(result => {
             res.status(200).json({
-                count : count,
-                tasks : tasks
+                message : "Task Updated",
+            })
+        })
+        .catch(err => {
+            res.status(500).json({
+                error : err
+            })
+        })
+}
+
+const deleteTask = (req, res, next) => {
+    Task.findOneAndRemove(
+        {
+            _id : req.params.taskId
+        },
+        )
+        .exec()
+        .then(() => {
+            res.status(200).json({
+                message: "Task deleted",
             })
         })
         .catch(err => {
@@ -46,5 +88,6 @@ const getTasks = (req, res, next) => {
 
 module.exports = {
     addTask,
-    getTasks
+    deleteTask,
+    updateTask
 }
