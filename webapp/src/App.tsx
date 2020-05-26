@@ -1,9 +1,13 @@
 import React from 'react';
+import './App.scss'
+import Layout from "./components/common/Layout/Layout";
 
 function App() {
   return (
-    <div>
-         <h1>React App</h1>
+    <div className="app">
+       <Layout>
+           Layout
+       </Layout>
     </div>
   );
 }

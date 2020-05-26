@@ -1,0 +1,27 @@
+.todo-header-wrapper{
+  width: 100%;
+  min-height: 53px;
+  background: #282F4A;
+  display: flex;
+  flex: 1;
+  > div{
+    flex: 1;
+    padding: 1rem;
+  }
+ > .search{
+   > span{
+     color: #747E9D;
+   }
+   > input {
+     background: #282F4A;
+     border: unset;
+     margin-left: 1rem;
+     color: #747E9D;
+     font-family: 'Arial', FontAwesome;
+     font-size: 14px;
+     &:focus{
+       outline: none;
+     }
+   }
+ }
+}
