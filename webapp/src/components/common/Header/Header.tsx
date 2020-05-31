@@ -8,7 +8,7 @@ const Header = () => {
                <span>Logo</span>
                <input placeholder="&#xF002; | search..."/>
            </div>
-           <div className="tabs"></div>
+           <div className="tabs"></div> //TODO implement this
            <div className="status"></div>
         </div>
     );

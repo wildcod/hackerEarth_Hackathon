@@ -1,3 +1,15 @@
 .todo-home-wrapper{
+     width: 100%;
+   > .tab-container{
+     width: 100%;
+     min-height: 80px;
+   }
+   > .main-container{
+     width: 100%;
+     display: flex;
+     min-height: 500px;
+     flex: 1;
 
+
+   }
 }

@@ -1,0 +1,95 @@
+.todo-sidebar{
+  flex: 1;
+  margin: 0 1rem 1rem 2rem;
+  background: #282F4A;
+  padding: 1rem;
+  border-radius: 4px;
+  > h3{
+    color: #747E9D;
+  }
+  > .date-container{
+    display: flex;
+    margin: 1rem 0;
+    > .date{
+      display: flex;
+      line-height: 15px;
+      flex-direction: column;
+      flex: 1;
+      padding: 10px 6px;
+      text-align: center;
+      font-size: 12px;
+      color: #ffffff;
+      background: linear-gradient(to right, #4FEECE , #38D4DD);
+      border-radius: 4px;
+      > span:nth-child(1){
+        font-size: 1.4rem;
+      }
+      > span:nth-child(2){
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+    }
+    > .month{
+      display: flex;
+      flex-direction: column;
+      flex: 4;
+      padding: 0 10px;
+      > span{
+        color: #F6F9FF;
+      }
+    }
+  }
+  > .todo-list{
+    > h3{
+      color: #747E9D;
+    }
+    > .item{
+      display: flex;
+      flex: 1;
+      background: #303752;
+      border-radius: 4px;
+      box-shadow: 5px 4px 12px -1px rgba(0,0,0,1);
+      margin-bottom: 10px;
+      cursor: pointer;
+      > span:nth-child(1){
+        flex: 1;
+        background: linear-gradient(to right, #4FEECE , #38D4DD);
+        padding: 5px 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        text-align: center;
+        color: white;
+      }
+      > span:nth-child(2){
+        flex: 4;
+        color: #F6F9FF;
+        padding: 5px 0 5px 24px;
+      }
+    }
+  }
+  > .up-coming{
+    margin: 1rem 0;
+    > h3{
+      color: #747E9D;
+    }
+    > .card{
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to right, #4FEECE , #38D4DD);
+      border-radius: 4px;
+      padding: 1rem;
+      box-shadow: 5px 4px 12px -1px rgba(0,0,0,1);
+      margin-bottom: 5px;
+      cursor: pointer;
+      > .title,.time{
+        color: #10555A;
+        font-size: 12px;
+        font-weight: 700;
+      }
+      > .body{
+        color: #ffffff;
+        font-size: 14px;
+      }
+    }
+  }
+}
