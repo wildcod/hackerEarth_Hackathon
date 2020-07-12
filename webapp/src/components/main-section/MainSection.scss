@@ -1,21 +1,25 @@
-.todo-main-section{
+.todo-main-section {
   flex: 4;
   background: #282F4A;
   margin: 0 1rem 1rem 1rem;
   border-radius: 4px;
-  > .header{
+
+  > .header {
     width: 100%;
     padding: 11px;
     background: #303752;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     display: flex;
-    > div{
-      color: #F6F9FF;;
+
+    > div {
+      color: #F6F9FF;
     }
-    > .left-col{
+
+    > .left-col {
       flex: 1;
-      > span{
+
+      > span {
         padding: 0.4rem 0.7rem;
         background: #282F4A;
         margin: 0 0.5rem;
@@ -23,20 +27,83 @@
         font-size: 14px;
       }
     }
-    > .center-col{
+
+    > .center-col {
       flex: 1;
       text-align: center;
     }
-    > .right-col{
+
+    > .right-col {
       flex: 1;
       display: flex;
       justify-content: flex-end;
-      > span{
+
+      > span {
         padding: 0.4rem 0.7rem;
         background: #282F4A;
-        margin: 0 0.5rem;
         border-radius: 4px;
         font-size: 14px;
+      }
+
+      .arrow {
+        background: #363F5C;
+        padding: 0.6rem 0.3rem;
+      }
+    }
+  }
+
+  > .task-list-container {
+    padding: 1rem 7rem;
+
+    > .item {
+      display: flex;
+      color: #F6F9FF;
+      box-shadow: 5px 4px 12px -1px rgba(0,0,0,1);
+      cursor: pointer;
+      > div {
+        padding: 10px 6px;
+        text-align: center;
+      }
+      > .date {
+        display: flex;
+        line-height: 15px;
+        flex-direction: column;
+        flex: 1;
+        font-size: 12px;
+        color: #ffffff;
+        border-radius: 4px 0 0 4px;
+        background: linear-gradient(to right, #4FEECE, #38D4DD);
+        //border-radius: 4px;
+        > span:nth-child(1) {
+          font-size: 1rem;
+          font-weight: 700;
+        }
+
+        > span:nth-child(2) {
+          font-size: 0.8rem;
+          font-weight: 700;
+        }
+      }
+
+      > .priority {
+        flex: 2;
+        color: white;
+        background: linear-gradient(to right, #FBAE27, #F95011);
+      }
+
+      > .title {
+        flex: 7;
+      }
+
+      > .time {
+        flex: 2;
+        background: linear-gradient(to right, #77A4F2, #A14DFF);
+      }
+
+      > .end-date {
+        flex: 1;
+        background: linear-gradient(to right, #FC2922, #BD230E);
+        border-radius: 0 4px 4px 0;
       }
     }
   }

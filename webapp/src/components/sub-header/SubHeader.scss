@@ -1,0 +1,38 @@
+.todo-sub-header{
+  display: grid;
+  grid-template-columns : repeat(8,12.5%);
+  grid-template-rows : 100%;
+  width: 100%;
+  color: #E1E2E8;
+  > .title{
+    grid-area: 1/1/1/1;
+    padding-left: 1.1rem;
+    font-size: 24px;
+  }
+  > .tabs{
+    grid-area: 1/5/1/span 2;
+    background: #282F4A;
+    border-radius: 4px;
+    display: flex;
+   > div{
+     text-transform: uppercase;
+     font-weight: 600;
+     padding: 9px;
+     font-size: 12px;
+     cursor: pointer;
+   }
+   > div:first-child{
+     border-radius: 4px 0 0 4px;
+   }
+   > div:last-child{
+     border-radius: 0 4px 4px 0;
+   }
+   > .selected{
+     background: linear-gradient(to right, #4DEBCD, #38D4DD);
+     color: #f8f9ff;
+   }
+  }
+  > .add-task{
+    grid-area: 1/8/1/span 1;
+  }
+}
