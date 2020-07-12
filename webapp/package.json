@@ -60,10 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "pretty-quick --staged"
     }
-  },
-  "lint-staged" : {
-      "src/**/*.{ts,tsx,js,css,html}": ["eslint", "pretty-quick — staged", "git add"]
   }
 }
