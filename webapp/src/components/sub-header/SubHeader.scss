@@ -61,3 +61,33 @@
     }
   }
 }
+
+.ant-modal-content {
+  > .ant-modal-header {
+    background: #303752;
+    border-color: #303752;
+    > .ant-modal-title {
+      color: #ffffff;
+    }
+  }
+  > .ant-modal-body {
+    background: #282f4a;
+    padding: 0;
+    color: #ffffff;
+    > .form-container {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      > form {
+        > label {
+          display: block;
+          color: #a5a7b7;
+        }
+        > input {
+          background: #303752;
+          color: #a1a7b8;
+        }
+      }
+    }
+  }
+}

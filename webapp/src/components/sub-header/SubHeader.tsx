@@ -27,14 +27,31 @@ const SubHeader = () => {
           <PlusOutlined /> Add Task
         </Button>
         <Modal
-          title="Vertically centered modal dialog"
+          title="Add Task"
           centered
+          closable={false}
+          footer={null}
           visible={isModalOpen}
           onOk={() => setIsModalOpen(false)}
           onCancel={() => setIsModalOpen(false)}>
-          <p>some contents...</p>
-          <p>some contents...</p>
-          <p>some contents...</p>
+          <div className="form-container">
+            <form>
+              <label htmlFor="title">Title</label>
+              <input type="text" name="title" placeholder="Add Title" />
+              <label htmlFor="description">Description</label>
+              <input
+                type="text"
+                name="description"
+                placeholder="Write Description"
+              />
+              <label htmlFor="due_date">Due Date</label>
+              <input type="date" name="due_date" />
+              <label htmlFor="label">Label</label>
+              <input type="text" name="label" placeholder="Add Label" />
+              <label htmlFor="priority">Priority</label>
+              <input type="text" name="priority" placeholder="Add Priority" />
+            </form>
+          </div>
         </Modal>
       </div>
     </div>
