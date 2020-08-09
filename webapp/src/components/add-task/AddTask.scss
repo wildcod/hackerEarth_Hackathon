@@ -1,0 +1,49 @@
+.todo-form-container {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  > form {
+    > label {
+      display: block;
+      color: #a5a7b7;
+      margin-bottom: 0.7rem;
+    }
+    > input,
+    textarea,
+    select {
+      background: #303752;
+      color: #a1a7b8;
+      border-color: #282f4a;
+      border-radius: 9px;
+      width: 100%;
+      padding-left: 7px;
+      height: 40px;
+      outline: none;
+      margin-bottom: 1rem;
+    }
+    > .submit-task-btn {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      > button {
+        width: 150px;
+        padding: 0.3rem;
+        border-radius: 6px;
+        background: linear-gradient(to right, #4debcd, #38d4dd);
+        border: none;
+      }
+    }
+  }
+}
+::placeholder {
+  color: #a1a7b8;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #a1a7b8;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #a1a7b8;
+}

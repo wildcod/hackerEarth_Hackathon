@@ -74,20 +74,12 @@
     background: #282f4a;
     padding: 0;
     color: #ffffff;
-    > .form-container {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      > form {
-        > label {
-          display: block;
-          color: #a5a7b7;
-        }
-        > input {
-          background: #303752;
-          color: #a1a7b8;
-        }
-      }
+    max-height: 480px;
+    overflow: auto;
+  }
+  .ant-modal-close-x {
+    > span {
+      color: #ffffff;
     }
   }
 }

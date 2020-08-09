@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { Button, Modal } from 'antd';
 import './SubHeader.scss';
+import AddTask from '../add-task/AddTask';
 
 const tabs = ['All', 'Personal', 'Work', 'Shopping', 'Others'];
 
@@ -29,29 +30,11 @@ const SubHeader = () => {
         <Modal
           title="Add Task"
           centered
-          closable={false}
+          // closable={false}
           footer={null}
-          visible={isModalOpen}
-          onOk={() => setIsModalOpen(false)}
-          onCancel={() => setIsModalOpen(false)}>
-          <div className="form-container">
-            <form>
-              <label htmlFor="title">Title</label>
-              <input type="text" name="title" placeholder="Add Title" />
-              <label htmlFor="description">Description</label>
-              <input
-                type="text"
-                name="description"
-                placeholder="Write Description"
-              />
-              <label htmlFor="due_date">Due Date</label>
-              <input type="date" name="due_date" />
-              <label htmlFor="label">Label</label>
-              <input type="text" name="label" placeholder="Add Label" />
-              <label htmlFor="priority">Priority</label>
-              <input type="text" name="priority" placeholder="Add Priority" />
-            </form>
-          </div>
+          onCancel={() => setIsModalOpen(false)}
+          visible={isModalOpen}>
+          <AddTask />
         </Modal>
       </div>
     </div>
